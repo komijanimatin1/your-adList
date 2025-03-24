@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.adItem {
+    @apply 
+    w-4/5 
+    bg-gray-400
+    rounded-full
+    p-4;
+}
