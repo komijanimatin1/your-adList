@@ -1,17 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-regular-svg-icons';
 
-export default function Header() {
+
+export default function Header({ theme, toggleTheme }: { theme: string; toggleTheme?: () => void | undefined }) {
     return (
         <>
-            <div>
-                <h1 className="text-white font-bold text-4xl mt-8 mb-16">Welcome to AdWeb - Your Marketing Solution</h1>
-                <p className="text-gray-200 text-center">Your one-stop solution for all marketing needs.</p>
+            <div className='flex justify-between max-w-screen-xl'>
+                <h1 className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-bold text-4xl mt-8 mb-16`}>Welcome to AdWeb - Your Marketing Solution</h1>
+                <button onClick={toggleTheme} className='right-16 top-8'>{theme === 'dark' ? <FontAwesomeIcon icon={faSun} style={{ color: "#ffffff" }} size='2xl' /> : <FontAwesomeIcon icon={faSun} style={{ color: "#000000" }} size='2xl' />}</button>
             </div>
-            <div>
-                <input type="text" placeholder="Search..." className="mt-4 p-2 rounded" />
-                <FontAwesomeIcon className='text-gray-200 bg-amber-500' icon={faMagnifyingGlass} />
-            </div>
+                <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'} text-center`}>Your one-stop solution for all marketing needs.</p>
         </>
     )
 }

@@ -4,7 +4,9 @@
 
 .adItem {
     @apply 
-    w-4/5 
+    my-2
+    w-full
+    overflow-auto
     bg-gray-400
     rounded-full
     p-4;
